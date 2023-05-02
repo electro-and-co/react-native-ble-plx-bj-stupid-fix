@@ -1,4 +1,4 @@
-BleError: Bluetooth state change failed// @flow
+// @flow
 'use strict'
 
 import { Device } from './Device'
