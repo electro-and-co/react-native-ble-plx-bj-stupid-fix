@@ -62,6 +62,7 @@ export class BleManager {
    * Creates an instance of {@link BleManager}.
    */
   constructor(options: BleManagerOptions = {}) {
+    // bj's stupid fucking fix
     if (!BleModule.addListener) BleModule.addListener=console.log
     if (!BleModule.removeListeners) BleModule.removeListeners=console.log
     
