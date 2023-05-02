@@ -1,4 +1,4 @@
-// @flow
+BleError: Bluetooth state change failed// @flow
 'use strict'
 
 import { Device } from './Device'
@@ -62,6 +62,9 @@ export class BleManager {
    * Creates an instance of {@link BleManager}.
    */
   constructor(options: BleManagerOptions = {}) {
+    if (!BleModule.addListener) BleModule.addListener=console.log
+    if (!BleModule.removeListeners) BleModule.removeListeners=console.log
+    
     this._eventEmitter = new EventEmitter(BleModule)
     this._uniqueId = 0
     this._activePromises = {}
