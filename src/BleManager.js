@@ -463,12 +463,7 @@ export class BleManager {
    * @returns {Promise<Device>} Returns closed {@link Device} when operation is successful.
    */
   async cancelDeviceConnection(deviceIdentifier: DeviceId): Promise<Device> {
-    try
-    {
-      const nativeDevice = await this._callPromise(BleModule.cancelDeviceConnection(deviceIdentifier))
-    } catch (error) {
-        console.log('12312312312321',error)
-    }
+    const nativeDevice = await this._callPromise(BleModule.cancelDeviceConnection(deviceIdentifier))
     return new Device(nativeDevice, this)
   }
 
